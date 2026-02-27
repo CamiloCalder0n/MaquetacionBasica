@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -43,6 +44,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Primero()
+            Segundo()
 
 
 
@@ -152,6 +154,234 @@ fun Primero() {
                 shape = RoundedCornerShape(50)
             ) {
                 Text("Eliminar")
+            }
+        }
+    }
+}
+
+@Composable
+@Preview(showSystemUi = true)
+fun Segundo() {
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
+        Image(
+            painter = painterResource(id = R.drawable.cicla),
+            contentDescription = "Perfil",
+            modifier = Modifier
+                .size(120.dp)
+                .clip(RoundedCornerShape(100.dp))
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Text(
+            text = "Juan Pérez",
+            fontSize = 22.sp,
+            fontWeight = FontWeight.Bold
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Text(
+            text = "Desarrollador Android apasionado por la tecnología y el diseño.",
+            textAlign = TextAlign.Center
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text("150", fontWeight = FontWeight.Bold)
+                Text("Posts", color = Color.Gray)
+            }
+
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text("2.3K", fontWeight = FontWeight.Bold)
+                Text("Seguidores", color = Color.Gray)
+            }
+
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text("980", fontWeight = FontWeight.Bold)
+                Text("Likes", color = Color.Gray)
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .clip(RoundedCornerShape(50))
+                    .background(Color(0xFF6A4FB3))
+                    .padding(vertical = 12.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Text("Seguir", color = Color.White)
+            }
+
+            Spacer(modifier = Modifier.width(16.dp))
+
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .clip(RoundedCornerShape(50))
+                    .background(Color.White)
+                    .border(
+                        width = 1.dp,
+                        color = Color.Gray,
+                        shape = RoundedCornerShape(50)
+                    )
+                    .padding(vertical = 12.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Text("Mensaje", color = Color(0xFF6A4FB3))
+            }
+        }
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        Text(
+            text = "Intereses",
+            fontWeight = FontWeight.Bold,
+            fontSize = 18.sp,
+            modifier = Modifier.align(Alignment.Start)
+        )
+
+        Spacer(modifier = Modifier.height(12.dp))
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(50))
+                    .background(Color.LightGray)
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
+            ) {
+                Text("Ciclismo")
+            }
+
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(50))
+                    .background(Color.LightGray)
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
+            ) {
+                Text("Programación")
+            }
+
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(50))
+                    .background(Color.LightGray)
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
+            ) {
+                Text("UI/UX")
+            }
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(50))
+                    .background(Color.LightGray)
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
+            ) {
+                Text("Música")
+            }
+
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(50))
+                    .background(Color.LightGray)
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
+            ) {
+                Text("Viajes")
+            }
+
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(50))
+                    .background(Color.LightGray)
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
+            ) {
+                Text("Gaming")
+            }
+        }
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        Text(
+            text = "Proyectos Recientes",
+            fontWeight = FontWeight.Bold,
+            fontSize = 18.sp,
+            modifier = Modifier.align(Alignment.Start)
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color(0xFFBDBDBD))
+        ) {
+
+            Image(
+                painter = painterResource(id = R.drawable.cicla),
+                contentDescription = "Proyecto",
+                modifier = Modifier.size(120.dp)
+            )
+
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(16.dp)
+            ) {
+
+                Text(
+                    text = "App de Ciclismo",
+                    fontWeight = FontWeight.Bold
+                )
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                Text(
+                    text = "Aplicación para rastrear rutas de ciclismo con mapas y estadísticas."
+                )
+
+                Spacer(modifier = Modifier.height(12.dp))
+
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(50))
+                        .background(Color(0xFF6A4FB3))
+                        .padding(horizontal = 20.dp, vertical = 8.dp)
+                ) {
+                    Text("Ver más", color = Color.White)
+                }
             }
         }
     }
